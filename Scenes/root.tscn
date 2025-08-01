@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://b05lycgiudtt0"]
+[gd_scene load_steps=11 format=4 uid="uid://b05lycgiudtt0"]
 
 [ext_resource type="Script" uid="uid://cfp4bmpxibx2c" path="res://Scripts/Movement.gd" id="1_c3mwy"]
 [ext_resource type="Texture2D" uid="uid://cj2m1vk7o1476" path="res://Textures/icon.svg" id="2_4g5cr"]
 [ext_resource type="Texture2D" uid="uid://bw6qnxhx5aln" path="res://Textures/Untitled.png" id="3_ckhy6"]
 [ext_resource type="Shader" uid="uid://qjyscjabv6wl" path="res://Misc/Shaders/Shockwave.gdshader" id="4_dun2r"]
+[ext_resource type="FontFile" uid="uid://5ii2yoge4mvs" path="res://Misc/Fonts/7pxMONOkeychain.ttf" id="5_4g5cr"]
+[ext_resource type="Script" uid="uid://cmcnb18utwo48" path="res://Scenes/nameupdater.gd" id="6_ckhy6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvh5c"]
 
@@ -138,3 +140,26 @@ offset_left = -578.0
 offset_top = -322.0
 offset_right = 576.0
 offset_bottom = 327.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 58.0
+offset_bottom = 9.0
+theme_override_colors/font_color = Color(0.819608, 0.74902, 0.690196, 1)
+theme_override_fonts/font = ExtResource("5_4g5cr")
+text = "1234567"
+horizontal_alignment = 1
+justification_flags = 0
+uppercase = true
+script = ExtResource("6_ckhy6")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
+offset_right = 20.0
+offset_bottom = 25.0
+scale = Vector2(3, 0.5)
+color = Color(0.223529, 0.168627, 0.207843, 1)

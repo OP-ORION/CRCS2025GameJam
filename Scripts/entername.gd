@@ -15,6 +15,11 @@ func text_to_upper(new_text):
 	self.caret_column = text.length()
 
 func name_entered(name):
+	if name.length() == 0:
+		self.grab_focus()
+		return
+	Gamemanager.fullname = name
+	Gamemanager.currentname = name
 	get_tree().change_scene_to_file("res://Scenes/root.tscn")
 	
 	

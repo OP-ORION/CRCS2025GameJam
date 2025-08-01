@@ -14,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_right = 288.0
 offset_bottom = 162.0
@@ -67,3 +68,4 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.819608, 0.74902, 0.690196, 1)
 theme_override_fonts/font = ExtResource("1_6ay1b")
 text = "ENTER YOUR NAME:"
+horizontal_alignment = 1

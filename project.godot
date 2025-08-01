@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0.223529, 0.168627, 0.207843, 1)
 config/icon="res://Textures/icon.svg"
 
+[autoload]
+
+Gamemanager="*res://Scripts/gamemanager.gd"
+
 [display]
 
 window/size/viewport_width=288
