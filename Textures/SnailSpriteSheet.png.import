@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b37rl8urrrvu5"
-path="res://.godot/imported/Untitled.png-a8d098f32bff6b6b26fc00deea6aa0e6.ctex"
+uid="uid://bd3bbc8y1j081"
+path="res://.godot/imported/SnailSpriteSheet.png-1a3e4a461215cbc9f847c5d84fee56c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-a8d098f32bff6b6b26fc00deea6aa0e6.ctex"]
+source_file="res://Textures/SnailSpriteSheet.png"
+dest_files=["res://.godot/imported/SnailSpriteSheet.png-1a3e4a461215cbc9f847c5d84fee56c8.ctex"]
 
 [params]
 

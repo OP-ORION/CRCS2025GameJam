@@ -3,7 +3,6 @@ extends CharacterBody2D
 
 @export var SPEED := 300.0
 @export var JUMP_VELOCITY := -400.0
-@export var intertia := 2.5
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -18,8 +17,11 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
-		velocity.x = velocity.x/intertia + direction * SPEED
+		$SnailSprite.play("crawling")
+		velocity.x = direction * SPEED
+		$SnailSprite.scale.x = sign(direction)
 	else:
+		$SnailSprite.stop()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
