@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://44m604a778xv"]
 
-[ext_resource type="Shader" uid="uid://qjyscjabv6wl" path="res://Misc/Shaders/Shockwave.gdshader" id="1_xdb1n"]
+[ext_resource type="Shader" uid="uid://qjyscjabv6wl" path="res://Scripts/Shaders/Shockwave.gdshader" id="1_xdb1n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qwwtv"]
 shader = ExtResource("1_xdb1n")

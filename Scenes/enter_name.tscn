@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyyyhldo8bhow"]
 
-[ext_resource type="FontFile" uid="uid://5ii2yoge4mvs" path="res://Misc/Fonts/7pxMONOkeychain.ttf" id="1_6ay1b"]
+[ext_resource type="FontFile" uid="uid://5ii2yoge4mvs" path="res://Fonts/7pxMONOkeychain.ttf" id="1_6ay1b"]
 [ext_resource type="Script" uid="uid://b2d43gsqe3a0d" path="res://Scripts/entername.gd" id="2_p6lae"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t2bn0"]

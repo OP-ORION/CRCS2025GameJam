@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://5ii2yoge4mvs"
-path="res://.godot/imported/7pxMONOkeychain.ttf-26fecd248f89d5594f6f47f0fc5d7f10.fontdata"
+path="res://.godot/imported/7pxMONOkeychain.ttf-b33288fa2bdbb1ab37a8e2472ab6747c.fontdata"
 
 [deps]
 
-source_file="res://Misc/Fonts/7pxMONOkeychain.ttf"
-dest_files=["res://.godot/imported/7pxMONOkeychain.ttf-26fecd248f89d5594f6f47f0fc5d7f10.fontdata"]
+source_file="res://Fonts/7pxMONOkeychain.ttf"
+dest_files=["res://.godot/imported/7pxMONOkeychain.ttf-b33288fa2bdbb1ab37a8e2472ab6747c.fontdata"]
 
 [params]
 
