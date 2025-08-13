@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	if position.y > 50 and not reloading:
+	if position.y > 1000 and not reloading:
 		reloading = true
 		$Camera2D/AnimationPlayer.play("Zoom_Out")
 		await $Camera2D/AnimationPlayer.animation_finished

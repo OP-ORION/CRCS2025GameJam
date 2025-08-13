@@ -279,7 +279,7 @@ shader_parameter/palette = ExtResource("8_fu36u")
 [node name="Root" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(-1778, 97)
+position = Vector2(-1647, 100)
 script = ExtResource("1_c3mwy")
 SPEED = 200.0
 JUMP_VELOCITY = -300.0
