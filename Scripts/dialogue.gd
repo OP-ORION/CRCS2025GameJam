@@ -24,6 +24,13 @@ func talk(body):
 
 func talk2():
 	$"../CanvasLayer".visible = false
+	await speak("FOOLISH MORTAL!");
+	await speak("HERE. IN MY\n PITTY");
+	await speak("I WILL GIVE YOU\n THE ABILITY\n TO JUMP");
+	$"../../CharacterBody2D".canJump = true
+	await speak("");
+	$"../AnimationPlayer".play("FlyOff")
+
 
 func speak(words):
 	await get_tree().create_timer(.1).timeout
