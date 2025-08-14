@@ -1,7 +1,8 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 
 @export var SPEED := 300.0
+@export var ROLL_SPEED := 300.0
 @export var JUMP_VELOCITY := -400.0
 var reloading = false
 var canJump = false
@@ -10,26 +11,32 @@ func _ready() -> void:
 	$Camera2D/AnimationPlayer.play("Zoom_In")
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("Up") and is_on_floor() and canJump:
-		velocity.y = JUMP_VELOCITY
+	$RayCast2D.force_raycast_update()
+	if Input.is_action_just_pressed("Up") and $RayCast2D.is_colliding() and lock_rotation:
+		$RollMin.start()
+		lock_rotation = false
+		apply_force(Vector2(0,JUMP_VELOCITY))
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
 		$SnailSprite.play("crawling")
-		velocity.x = direction * SPEED
-		$SnailSprite.scale.x = sign(direction)
+		constant_force = Vector2(direction*SPEED * (1 if lock_rotation else 0),0)
+		apply_torque(ROLL_SPEED*direction * (0 if lock_rotation else 1))
+		$SnailSprite.scale.x = sign(direction) if lock_rotation else 1
 	else:
+		constant_force = Vector2(0,0)
 		$SnailSprite.stop()
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
+	
+	#slow to a snails pace
+	if (linear_velocity.abs().x > 100) and lock_rotation:
+		linear_velocity.x = 100 * linear_velocity.sign().x
+	
+	
+	if (linear_velocity.abs().length()<25) and $RollMin.is_stopped() and not direction:
+		lock_rotation = true
+		rotation = 0
 	
 	if position.y > 1000 and not reloading:
 		reloading = true
