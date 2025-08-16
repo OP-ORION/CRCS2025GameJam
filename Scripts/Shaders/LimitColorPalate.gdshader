@@ -15,7 +15,7 @@ void fragment()
 	float palette_pixel_size = 1.0 / float(palette_size);
 	for (int x = 0; x < palette_size; x++)
 	{
-		vec3 palette_col = texture(palette, vec2(float(x) * palette_pixel_size, 0.0)).rgb;
+		vec3 palette_col = texture(palette, vec2(float((x)) * palette_pixel_size, 0.0)).rgb;
 		float error = distance(source_col, palette_col);
 		if (error < smallest_error)
 		{
