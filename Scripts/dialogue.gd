@@ -8,9 +8,11 @@ func _ready():
 
 
 func talk(body):
-	if body is CharacterBody2D and not activated: #THIS WILL CAUSE BUGS LATER MOST LIKELY (IF IT WORKS IT WORKS)
+	if body == $"../../Snail" and not activated: #THIS WILL CAUSE BUGS LATER MOST LIKELY (IF IT WORKS IT WORKS)
 		activated = true
 		$"../StaticBody2D/CollisionShape2D".disabled = false
+		$"../AnimationPlayer".play("FlyOn")
+		await get_tree().create_timer(.5).timeout
 		
 		await speak("HEY!\nLISTEN!");
 		await speak("WHO IS IT\nTHAT PASSES");
@@ -23,11 +25,14 @@ func talk(body):
 		$"../StaticBody2D2/CollisionShape2D".disabled = true
 
 func talk2():
+	$"../AudioStreamPlayer2D".play()
+	var tween = get_tree().create_tween()
+	tween.tween_property($"../../BombLayer/ColorRect".material, 'shader_parameter/radius', 5, 2.5)
 	$"../CanvasLayer".visible = false
 	await speak("FOOLISH MORTAL!");
 	await speak("HERE. IN MY\n PITTY");
 	await speak("I WILL GIVE YOU\n THE ABILITY\n TO JUMP");
-	$"../../CharacterBody2D".canJump = true
+	$"../../Snail".canJump = true
 	await speak("");
 	$"../AnimationPlayer".play("FlyOff")
 
