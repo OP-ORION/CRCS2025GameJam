@@ -1,5 +1,5 @@
 extends Label
 
 
-func _ready():
+func _process(delta: float):
 	self.text = Gamemanager.currentname

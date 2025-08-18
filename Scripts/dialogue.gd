@@ -20,21 +20,22 @@ func talk(body):
 		await speak("can i have\nyour name?");
 			
 		$"../CanvasLayer".visible = true
-		
-		$"../StaticBody2D/CollisionShape2D".disabled = false
-		$"../StaticBody2D2/CollisionShape2D".disabled = true
+	
 
 func talk2():
 	$"../AudioStreamPlayer2D".play()
 	var tween = get_tree().create_tween()
 	tween.tween_property($"../../BombLayer/ColorRect".material, 'shader_parameter/radius', 5, 2.5)
 	$"../CanvasLayer".visible = false
+	Gamemanager.currentname = ""
 	await speak("FOOLISH MORTAL!");
 	await speak("HERE. IN MY\n PITTY");
 	await speak("I WILL GIVE YOU\n THE ABILITY\n TO JUMP");
 	$"../../Snail".canJump = true
 	await speak("");
 	$"../AnimationPlayer".play("FlyOff")
+	$"../StaticBody2D/CollisionShape2D".disabled = false
+	$"../StaticBody2D2/CollisionShape2D".disabled = true
 
 
 func speak(words):

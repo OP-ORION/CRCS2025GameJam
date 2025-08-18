@@ -27,8 +27,7 @@ func _physics_process(delta: float) -> void:
 		self.physics_material_override.friction = Roll_F
 		self.physics_material_override.bounce = Roll_Bounce
 		lock_rotation = false
-		print($RayCast2D.is_colliding())
-		apply_force(Vector2(0,JUMP_VELOCITY if canJump and $RayCast2D.is_colliding() else 0))
+		apply_force(Vector2(Input.get_axis("Left", "Right") * 55000,JUMP_VELOCITY if canJump and $RayCast2D.is_colliding() else 0))
 		$SnailSprite.play("rolling")
 	
 	#handle move
@@ -40,7 +39,7 @@ func _physics_process(delta: float) -> void:
 			$SnailSprite.scale.x = sign(direction)
 		else:
 			constant_force = Vector2(0,0)
-			$SnailSprite.scale.x = sign(linear_velocity.x)
+			#$SnailSprite.scale.x = sign(linear_velocity.x)
 			apply_torque(ROLL_SPEED*direction )
 	else:
 		constant_force = Vector2(0,0)
